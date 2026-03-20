@@ -19,7 +19,9 @@ function saveProof(proof) {
   data.push(proof);
   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
 }
-
+app.get("/", (req, res) => {
+  res.send("VerifyReal backend is running");
+});
 app.get("/health", (req, res) => {
   res.json({ ok: true });
 });
